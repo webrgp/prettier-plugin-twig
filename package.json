@@ -1,24 +1,26 @@
 {
-  "name": "rollup-starter-lib",
+  "name": "prettier-plugin-twig",
   "version": "1.0.0",
-  "main": "dist/how-long-till-lunch.cjs.js",
-  "module": "dist/how-long-till-lunch.esm.js",
-  "browser": "dist/how-long-till-lunch.umd.js",
-  "dependencies": {
-    "ms": "^2.0.0"
-  },
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^11.0.1",
-    "@rollup/plugin-node-resolve": "^7.0.0",
-    "rollup": "^1.29.0"
-  },
-  "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "test": "node test/test.js",
-    "pretest": "npm run build"
-  },
+  "type": "module",
   "files": [
     "dist"
-  ]
+  ],
+  "main": "./dist/prettier-plugin-twig.umd.cjs",
+  "module": "./dist/prettier-plugin-twig.js",
+  "exports": {
+    ".": {
+      "import": "./dist/prettier-plugin-twig.js",
+      "require": "./dist/prettier-plugin-twig.umd.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest",
+    "pretest": "npm run build"
+  },
+  "devDependencies": {
+    "vite": "^4.4.11",
+    "vitest": "^0.34.6"
+  }
 }
